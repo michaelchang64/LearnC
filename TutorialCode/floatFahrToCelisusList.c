@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /* print Fahrenheit-Celsius table
- * for fahr = 0, 20, ..., 300 */
+ * for fahr = 0, 20, ..., 300 flaoting point version */
 
 main() {
-    int fahr, celsius;
+    float fahr, celsius;
     int lower, upper, step;
 
     lower = 0;      /* lower limit of temperature table */
@@ -12,10 +12,10 @@ main() {
     step = 20;      /* step size */
 
     fahr = lower;
-    printf("%s\t%s\n", "fahr", "celsius");
+    printf("%4s %7s\n", "fahr", "celsius");
     while (fahr <= upper) {
-        celsius = 5 * (fahr - 323) /9;
-        printf("%d\t%d\n", fahr, celsius);
+        celsius = (5.0 / 9.0) * (fahr - 32.0);
+        printf("%3.0f %6.1f\n", fahr, celsius);
         fahr = fahr + step;
     }
 }
